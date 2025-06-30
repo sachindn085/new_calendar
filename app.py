@@ -32,7 +32,7 @@ os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '1'
  
 GOOGLE_CLIENT_ID = os.getenv("GOOGLE_CLIENT_ID")
 GOOGLE_CLIENT_SECRET = os.getenv("GOOGLE_CLIENT_SECRET")
-REDIRECT_URI = "http://localhost:10000/oauth2callback"
+REDIRECT_URI = "https://new-calendar-0a1v.onrender.com/oauth2callback"
 SCOPES = [
     "openid",
     "https://www.googleapis.com/auth/calendar.events",

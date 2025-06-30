@@ -91,6 +91,9 @@ def get_date_range(range_type):
     if range_type == "today":
         start = datetime(now.year, now.month, now.day)
         end = start + timedelta(days=1) - timedelta(seconds=1)
+    elif range_type =="tomorrow":
+        start = datetime(now.year, now.month, now.day) + timedelta(days=1)
+        end = start + timedelta(days=1) - timedelta(seconds=1)
     elif range_type == "this_week":
         start = now - timedelta(days=now.weekday()) 
         start = datetime(start.year, start.month, start.day)
@@ -122,6 +125,8 @@ def interpret_natural_query(query_text):
 
     if "today" in query_text:
         return "today"
+    elif "tomorrow" in query_text:
+        return "tomorrow"
     elif "week" in query_text:
         return "this_week"
     elif "month" in query_text:
